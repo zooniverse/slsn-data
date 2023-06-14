@@ -1,0 +1,40 @@
+---
+layout: default
+pagination:
+  data: subjects
+  size: 1
+  alias: subject
+permalink: "/subjects/{{ subject.id}}/"
+---
+<main class="subject">
+  <div>
+    <h1>Subject {{ subject.id }}</h1>
+
+    <div class="subjectGrid">
+    {% for location in subject.locations %}
+    <img width=300 src="{{location['image/jpeg']}}" />
+    {% endfor %}
+    <section>
+      <h2>Metadata</h2>
+      <dl>
+      {% for key, value in subject.metadata %}
+        <dt>{{ key }}</dt>
+        <dd>{{ value | dump }}</dd>
+      {% endfor %}
+      </dl>
+    </section>
+    <section>
+      <h2>Classifications</h2>
+      <ul>
+      {% for classification in subjectClassifications %}
+        <li>
+          {% for annotation in classification.annotations %}
+            <b>{{ annotation.task }}:</b> {{ annotation.value }}
+          {% endfor %}
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+    </div>
+    
+</main>

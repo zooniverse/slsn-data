@@ -1,0 +1,16 @@
+{
+  "name": "slsn-data",
+  "version": "0.1.0",
+  "description": "Explore classified subjects from Zooniverse SLSN.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jim O'Donnell",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@zooniverse/panoptes-js": "^0.3.0",
+    "csv-parse": "^5.4.0"
+  }
+}
