@@ -11,8 +11,8 @@ permalink: "/subjects/{{ subject.id}}/"
     <h1>Subject {{ subject.id }}</h1>
 
     <div class="subjectGrid">
-    {% for location in subject.locations %}
-    <img width=300 src="{{location['image/jpeg']}}" />
+    {% for location in subjectLocations %}
+    <img width=300 alt="{{location.alt}}" src="{{location.src}}" />
     {% endfor %}
     <section>
       <h2>Metadata</h2>

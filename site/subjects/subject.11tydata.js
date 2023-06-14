@@ -8,6 +8,20 @@ function subjectClassifications({ subject, classifications }) {
   return classifications.filter(c => c.subjectID == subject.id)
 }
 
+function subjectLocations({ subject }) {
+  const [lightCurve, panStamp] = subject.locations
+  if (lightCurve && panStamp) {
+    return [{
+      alt: 'Light curve graph: brightness as a function of time in days.',
+      src: lightCurve['image/jpeg']
+    }, {
+      alt: 'PanSTARRS cut-out image of the target area of the sky.',
+      src: panStamp['image/jpeg']
+    }]
+  }
+  return []
+}
+
 function ogImage({ subject }) {
   const [lightCurve] = subject.locations
   return lightCurve['image/jpeg']
@@ -26,6 +40,7 @@ module.exports = {
   eleventyComputed: {
     title: subjectTitle,
     subjectClassifications,
+    subjectLocations,
     description,
     ogImage
   }
