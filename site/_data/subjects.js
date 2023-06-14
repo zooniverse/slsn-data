@@ -20,7 +20,7 @@ async function fetchAllSubjects(query) {
 
   const uniqueSubjects = [...new Set(allSubjects)]
   console.log('subjects:', uniqueSubjects.length)
-  return uniqueSubjects
+  return uniqueSubjects.filter(s => s.locations.length === 2)
 }
 
 /*
