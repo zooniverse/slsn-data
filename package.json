@@ -11,6 +11,6 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@zooniverse/panoptes-js": "^0.4.1",
-    "csv-parse": "^5.5.1"
+    "csv-parse": "^5.5.2"
   }
 }
